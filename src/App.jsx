@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-    <div className='App'>
+    <div className='page-center'>
       <Router>
         <Nav />
         <Routes>
