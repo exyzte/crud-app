@@ -1,0 +1,111 @@
+/* --- FULL SCREEN & VIDEO STYLING --- */
+
+.video-showcase-container {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Account for fixed Nav height (adjust if your Nav is taller) */
+    padding-top: 60px; 
+}
+
+.showcase-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    /* Makes video less distracting and more of a background texture */
+    filter: brightness(0.5) contrast(1.2); 
+    object-fit: cover;
+}
+
+/* --- OVERLAY & CONTENT STYLING --- */
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark transparency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.content-box {
+    max-width: 900px;
+    padding: 30px;
+    margin: 20px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05); /* Very slight translucent box */
+    border-radius: 12px;
+    backdrop-filter: blur(5px); /* Cinematic blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-title {
+    font-size: 3rem; /* Large title */
+    font-weight: 800;
+    color: #00bcd4; /* Teal color for emphasis */
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(0, 255, 149, 0.5);
+    letter-spacing: 2px;
+    font-family: sans-serif;
+}
+
+.introduction-text {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* --- VIDEO PLAYER FRAME (To showcase the latest release) --- */
+
+.latest-video-frame {
+    width: 80%; /* Adjust width for responsiveness */
+    max-width: 640px; /* Standard video width */
+    margin: 30px auto 0;
+    aspect-ratio: 16 / 9; /* Standard 16:9 aspect ratio */
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    border: 3px solid #00bcd4;
+}
+
+.latest-video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* --- RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+    .introduction-text {
+        font-size: 1rem;
+    }
+    .latest-video-frame {
+        width: 95%;
+    }
+}
